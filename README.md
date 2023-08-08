@@ -1,6 +1,6 @@
 # Cypress code-first sample project
 
-This project is using a code-first workflow. This is the approach you should use if you want your test cases to be automatically created in TestRail and not worry about mapping them manually. Using this approach, you don't need to do any modifications to the way you usually write your automated test cases. You can see sample tests in the `cypress/e2e/todo_app` folder. 
+This project is using a code-first workflow. This is the approach you should use if you want your test cases to be automatically created in TestRail and not worry about mapping them manually. Using this approach, you don't need to do any modifications to the way you usually write your automated test cases. You can see sample tests in the `cypress/e2e/todo_app` folder.
 
 ## How to use the project
 
@@ -16,10 +16,10 @@ pip install trcli
 npm install
 
 # Run tests
-npx cypress run --reporter junit --reporter-options "mochaFile=reports/junit-[hash].xml"
+npx cypress run --reporter junit --reporter-options "mochaFile=reports/TEST-[hash].xml"
 
 # Merge reports
-junitparser merge --glob "reports/junit-*" "reports/junit-report.xml"
+junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
 
 # Upload test results
 trcli -y -c "trcli-config.yml" parse_junit -f "reports/junit.xml"
