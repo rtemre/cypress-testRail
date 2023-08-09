@@ -13,14 +13,14 @@ jobs:
       - name: Execute automated tests
         continue-on-error: true
         uses: cypress-io/github-action@v5.3.0
-         with:
+        with:
           working-directory: ${{ env.WORKING_DIR }}
           command: npx cypress run --reporter junit --reporter-options mochaFile=reports/TEST-[hash].xml
       - name: Python setup
         if: always()
         uses: actions/setup-python@v3
         with:
-          python-version: '3.x'
+          python-version: "3.x"
       - name: Execute TestRail CLI upload results
         working-directory: ${{ env.WORKING_DIR }}
         if: always()
