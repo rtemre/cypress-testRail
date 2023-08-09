@@ -1,6 +1,9 @@
 name: Cypress Test
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches:
+      - feat/github-actions
 
 jobs:
   send-test-results-to-testrail:
