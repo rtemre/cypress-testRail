@@ -1,26 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuites tests="4" failures="1" errors="0" skipped="0" time="19.255"><testsuite name="Root Suite" timestamp="2023-08-07T14:20:28" tests="0" file="cypress/e2e/todo_app/todo_interactions.cy.js" time="0" failures="0" errors="0" skipped="0">
+<testsuites tests="4" failures="0" errors="0" skipped="0" time="3.083"><testsuite name="Root Suite" timestamp="2023-08-09T10:14:38" tests="0" file="cypress/e2e/todo_app/todo_smoke.cy.js" time="0" failures="0" errors="0" skipped="0">
   </testsuite>
-  <testsuite name="[interactions] Todo app list with a checked task" timestamp="2023-08-07T14:20:28" tests="3" time="18.66" failures="1" errors="0" skipped="0">
-    <testcase name="[interactions] Todo app list with a checked task can filter for uncompleted tasks" time="18.157" classname="can filter for uncompleted tasks">
-    </testcase>
-    <testcase name="[interactions] Todo app list with a checked task can filter for completed tasks" time="0.503" classname="can filter for completed tasks">
-    </testcase>
-    <testcase name="[interactions] Todo app list with a checked task can delete all completed tasks" time="0.000" classname="can delete all completed tasks">
-      <failure message="Timed out retrying after 4000ms: Not enough elements found. Found '1', expected '2'." type="AssertionError">AssertionError: Timed out retrying after 4000ms: Not enough elements found. Found '1', expected '2'.
-    at Context.eval (webpack:///./cypress/e2e/todo_app/todo_interactions.cy.js:34:7)
-
-      + expected - actual
-
-      -1
-      +2
-      </failure>
+  <testsuite name="[smoke] Todo app list" timestamp="2023-08-09T10:14:38" tests="1" time="0.527" failures="0" errors="0" skipped="0">
+    <testcase name="[smoke] Todo app list displays two todo items by default" time="0.527" classname="displays two todo items by default">
     </testcase>
   </testsuite>
-<testsuite name="Root Suite" timestamp="2023-08-07T14:20:59" tests="0" file="cypress/e2e/todo_app/todo_smoke.cy.js" time="0" failures="0" errors="0" skipped="0">
+<testsuite name="Root Suite" timestamp="2023-08-09T10:14:31" tests="0" file="cypress/e2e/todo_app/todo_interactions.cy.js" time="0" failures="0" errors="0" skipped="0">
   </testsuite>
-  <testsuite name="[smoke] Todo app list" timestamp="2023-08-07T14:20:59" tests="1" time="0.595" failures="0" errors="0" skipped="0">
-    <testcase name="[smoke] Todo app list displays two todo items by default" time="0.595" classname="displays two todo items by default">
+  <testsuite name="[interactions] Todo app list with a checked task" timestamp="2023-08-09T10:14:31" tests="3" time="2.556" failures="0" errors="0" skipped="0">
+    <testcase name="[interactions] Todo app list with a checked task can filter for uncompleted tasks" time="1.786" classname="can filter for uncompleted tasks">
+    </testcase>
+    <testcase name="[interactions] Todo app list with a checked task can filter for completed tasks" time="0.417" classname="can filter for completed tasks">
+    </testcase>
+    <testcase name="[interactions] Todo app list with a checked task can delete all completed tasks" time="0.353" classname="can delete all completed tasks">
     </testcase>
   </testsuite>
 </testsuites>
