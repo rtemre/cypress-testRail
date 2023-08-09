@@ -1,0 +1,38 @@
+name: Cypress Test
+
+on: [workflow_dispatch]
+
+jobs:
+  send-test-results-to-testrail:
+    runs-on: ubuntu-latest
+    env:
+      WORKING_DIR: cypress
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Execute automated tests
+        continue-on-error: true
+        uses: cypress-io/github-action@v5.3.0
+         with:
+          working-directory: ${{ env.WORKING_DIR }}
+          command: npx cypress run --reporter junit --reporter-options mochaFile=reports/TEST-[hash].xml
+      - name: Python setup
+        if: always()
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Execute TestRail CLI upload results
+        working-directory: ${{ env.WORKING_DIR }}
+        if: always()
+        run: |
+          pip install trcli
+          junitparser merge --glob "reports/TEST-*" "reports/junit-report.xml"
+          trcli -y \
+            -h https://vnx.testrail.io/ \
+            --project "My Project" \
+            -u varun_sharma@naxgrp.com \
+            -p Systango@123456 \
+            parse_junit \
+            --title "Automated Tests from GitHub workflow" \
+            --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+            -f "reports/junit-report.xml"
